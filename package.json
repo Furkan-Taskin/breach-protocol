@@ -1,0 +1,28 @@
+{
+  "name": "breach-protocol",
+  "version": "2.1.0",
+  "description": "ADHD-friendly, gamified study app for the CompTIA SecAI+ (CY0-001) certification, with a real SM-2 spaced-repetition engine and active recall.",
+  "scripts": {
+    "build": "node build.js",
+    "serve": "node build.js && python3 -m http.server 8000",
+    "start": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "comptia",
+    "secai",
+    "spaced-repetition",
+    "sm-2",
+    "active-recall",
+    "flashcards",
+    "exam-prep",
+    "pwa",
+    "study-tool",
+    "cybersecurity",
+    "ai-security"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/furkan-taskin/breach-protocol.git"
+  }
+}

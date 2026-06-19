@@ -1,0 +1,1193 @@
+{
+ "cards": [
+  {
+   "no": "D1-01",
+   "r": 2,
+   "i": "🧬",
+   "t": "Generative AI",
+   "g": "Creates vs. classifies",
+   "b": [
+    "GENERATES new content; discriminative models CLASSIFY input instead (benign/malicious)",
+    "Defense: phishing simulation, synthetic training data, automated report writing",
+    "Offense: phishing drafts, malware variants, deepfake content",
+    "Learns the data distribution, then produces similar-but-new samples"
+   ],
+   "tip": "\"Is it creating new content?\" -> Generative. \"Is it assigning a label/score?\" -> Discriminative."
+  },
+  {
+   "no": "D1-02",
+   "r": 0,
+   "i": "📊",
+   "t": "ML & Statistical Learning",
+   "g": "The pattern-learning foundations",
+   "b": [
+    "ML: learns patterns from data to make predictions without explicit programming (spam, malware detection)",
+    "Statistical learning: inference via statistical methods — anomaly detection, risk scoring",
+    "Statistical learning is the mathematical backbone of ML and is MORE EXPLAINABLE"
+   ],
+   "tip": "If the scenario stresses \"explainability,\" think statistical learning."
+  },
+  {
+   "no": "D1-03",
+   "r": 1,
+   "i": "🕸",
+   "t": "Deep Learning & Transformers",
+   "g": "The engine room of LLMs",
+   "b": [
+    "Deep learning: multi-layer neural nets for complex patterns (zero-day, deepfake detection)",
+    "It extracts features ITSELF rather than having them hand-engineered",
+    "Transformer: processes context IN PARALLEL via attention — the core architecture of LLMs",
+    "Difference from RNNs: parallel, not sequential -> training at massive scale becomes possible"
+   ],
+   "tip": "\"What architecture sits under LLMs?\" -> Transformer."
+  },
+  {
+   "no": "D1-04",
+   "r": 0,
+   "i": "💬",
+   "t": "NLP",
+   "g": "The layer that handles language",
+   "b": [
+    "Processes and understands human language: phishing-text analysis, threat-intel summarization",
+    "Turns UNSTRUCTURED text (logs, emails) into something processable",
+    "LLMs, SLMs, and chatbots are all applications within the NLP family"
+   ],
+   "tip": "If the scenario mentions \"text/language analysis,\" the family is NLP."
+  },
+  {
+   "no": "D1-05",
+   "r": 3,
+   "i": "⚖",
+   "t": "LLM vs SLM",
+   "g": "Cloud giant vs. edge specialist",
+   "b": [
+    "LLM: billions of parameters, general-purpose, cloud/GPU clusters, higher latency",
+    "SLM: few parameters, narrow task, runs LOCALLY on edge/single GPU, low latency",
+    "Air-gapped / OT-ICS / privacy scenario -> SLM (data never LEAVES the org)",
+    "SLM examples: Phi-3, Gemma, Mistral 7B"
+   ],
+   "tip": "The moment you see \"data can't go to the cloud / closed network,\" the answer is SLM."
+  },
+  {
+   "no": "D1-06",
+   "r": 2,
+   "i": "🎭",
+   "t": "GAN",
+   "g": "A duo that learns by competing",
+   "b": [
+    "Generator vs. Discriminator: two networks learn by competing AGAINST each other",
+    "Result: highly realistic synthetic data",
+    "Offense: deepfake generation | Defense: synthetic training data, attack simulation",
+    "Exam trap: a GAN is NOT only an attack tool"
+   ],
+   "tip": "When you see \"two networks compete against each other\" -> GAN."
+  },
+  {
+   "no": "D1-07",
+   "r": 3,
+   "i": "🎯",
+   "t": "Learning Paradigms",
+   "g": "Supervised / Unsupervised / RL",
+   "b": [
+    "Supervised: LABELED data -> classifying known threats (spam, malware signatures)",
+    "Unsupervised: UNLABELED data -> discovering unknown threats/anomalies (zero-day, UEBA)",
+    "Reinforcement: reward/penalty signal -> adaptive defense, response optimization",
+    "Zero-day scenario = no labels -> unsupervised anomaly detection"
+   ],
+   "tip": "\"Known or unknown?\" decides it: known->supervised, unknown->unsupervised."
+  },
+  {
+   "no": "D1-08",
+   "r": 1,
+   "i": "✅",
+   "t": "Model Validation",
+   "g": "The overfitting detector",
+   "b": [
+    "Checks performance on data the model HASN'T SEEN (the validation set)",
+    "Catches overfitting: exposes a model that shines in training but flops on real data",
+    "Cross-validation: splitting data into folds for a more reliable measure",
+    "The validation set tunes hyperparameters; the test set is saved for last"
+   ],
+   "tip": "Don't mix up the roles of train / validation / test."
+  },
+  {
+   "no": "D1-09",
+   "r": 2,
+   "i": "🔧",
+   "t": "The Fine-tuning Trio",
+   "g": "Epoch · Pruning · Quantization",
+   "b": [
+    "Fine-tuning: specializing a general model on domain-specific data",
+    "Epoch: one full pass over the training set; too many epochs = overfitting risk",
+    "Pruning: CUTS unnecessary connections -> structural shrinking",
+    "Quantization: LOWERS numeric precision (FP32->INT8) -> edge deployment"
+   ],
+   "tip": "Pruning = structure changes, Quantization = precision changes. Both shrink; different mechanism."
+  },
+  {
+   "no": "D1-10",
+   "r": 1,
+   "i": "🌐",
+   "t": "Federated Learning",
+   "g": "Data stays put, the model is shared",
+   "b": [
+    "Training happens AT THE DATA OWNER; only model updates go to the center",
+    "Raw data is never shared -> privacy advantage (hospitals, banks, multi-branch)",
+    "Its risk: model poisoning — a malicious participant can send a tainted update"
+   ],
+   "tip": "\"Data can't be shared but we need a common model\" -> Federated learning."
+  },
+  {
+   "no": "D1-11",
+   "r": 3,
+   "i": "📐",
+   "t": "The Shot Spectrum",
+   "g": "Zero · One · Multi",
+   "b": [
+    "Zero-shot: 0 examples — fastest and cheapest, low-to-medium accuracy",
+    "One-shot: 1 example — ideal for demonstrating format",
+    "Multi-shot (few-shot): 2+ examples — most consistent output, highest accuracy and cost",
+    "As example count rises: accuracy up, token cost up"
+   ],
+   "tip": "\"No examples, need speed\" -> zero-shot; \"consistent format required, examples available\" -> multi-shot."
+  },
+  {
+   "no": "D1-12",
+   "r": 2,
+   "i": "🧩",
+   "t": "Prompt Anatomy",
+   "g": "System · User · Role · Template",
+   "b": [
+    "System prompt: the model's identity and rules; usually HIDDEN from the user",
+    "User prompt: the user's actual request",
+    "System role: assigning a persona (\"you are a SOC analyst\") -> shapes the output",
+    "Template: a standard prompt skeleton -> consistency + a smaller injection surface"
+   ],
+   "tip": "Hijacking the system prompt is the prime target of prompt injection."
+  },
+  {
+   "no": "D1-13",
+   "r": 1,
+   "i": "🧹",
+   "t": "Cleansing & Verification",
+   "g": "Clean first, then verify",
+   "b": [
+    "Cleansing: removing errors/noise/duplicates -> catches poisoned samples early",
+    "Verification: checking accuracy and labels -> detects manipulation",
+    "Both are part of the data-prep pipeline; order: clean first, then verify"
+   ],
+   "tip": "Cleansing = FIXES quality, Verification = CHECKS correctness."
+  },
+  {
+   "no": "D1-14",
+   "r": 3,
+   "i": "🗺",
+   "t": "Lineage vs. Provenance",
+   "g": "Journey vs. origin",
+   "b": [
+    "Provenance = ORIGIN: where did the data come FROM? (source documentation)",
+    "Lineage = JOURNEY: what transformations did the data GO THROUGH? (end-to-end trail)",
+    "In incident response: provenance shows the poisoned data's source, lineage shows its spread"
+   ],
+   "tip": "\"From where?\" -> Provenance, \"through what?\" -> Lineage. The exam makes you choose between these two."
+  },
+  {
+   "no": "D1-15",
+   "r": 1,
+   "i": "🔏",
+   "t": "Data Integrity",
+   "g": "Guarantee it wasn't tampered with",
+   "b": [
+    "The guarantee that data hasn't been corrupted or altered",
+    "Controls: hashing, digital signatures, checksums, audit logs",
+    "If training-data integrity breaks -> the door to data poisoning opens"
+   ],
+   "tip": "\"Tamper detection\" = an integrity control (hash / signature)."
+  },
+  {
+   "no": "D1-16",
+   "r": 2,
+   "i": "⚗",
+   "t": "Augmentation & Balancing",
+   "g": "Shape the dataset",
+   "b": [
+    "Augmentation: growing the dataset with synthetic samples (for rare attack examples)",
+    "Balancing: fixing class imbalance -> raises recall in attack detection",
+    "Oversampling risk: OVERFITTING | Undersampling risk: INFORMATION LOSS"
+   ],
+   "tip": "Grow the minority -> oversampling/overfitting; trim the majority -> undersampling/information loss."
+  },
+  {
+   "no": "D1-17",
+   "r": 1,
+   "i": "🗂",
+   "t": "The Data-Type Trio",
+   "g": "Structured · Semi · Unstructured",
+   "b": [
+    "Structured: fixed schema (SQL table, CSV) — high AI compatibility",
+    "Semi-structured: flexible schema (JSON, XML) — exam trap: JSON is NOT structured",
+    "Unstructured: schema-less (email, PDF, video) — ~80-90% of volume, needs preprocessing"
+   ],
+   "tip": "JSON and XML are always SEMI-structured."
+  },
+  {
+   "no": "D1-18",
+   "r": 2,
+   "i": "💧",
+   "t": "Watermarking",
+   "g": "An invisible signature",
+   "b": [
+    "Embedding a hidden mark into AI-generated content -> proof of origin and ownership",
+    "Content watermarking: text / image / audio / video",
+    "Model watermarking: the MODEL ITSELF is marked -> evidence against model theft",
+    "A tracing tool for deepfake detection and IP protection"
+   ],
+   "tip": "\"Prove a stolen model\" -> model watermarking; \"identify AI content\" -> content watermarking."
+  },
+  {
+   "no": "D1-19",
+   "r": 3,
+   "i": "📡",
+   "t": "RAG Pipeline",
+   "g": "Query -> Vector -> Context -> Answer",
+   "b": [
+    "Flow: Query -> Embedding -> Vector search -> Relevant document -> LLM answer",
+    "Embeddings are NOT anonymous — an inversion attack can leak the original data",
+    "Vector storage risks: poisoning, unauthorized access",
+    "RAG REDUCES hallucination, it doesn't ELIMINATE it — the model can still misread context"
+   ],
+   "tip": "\"RAG ends hallucination\" = wrong option. Treat embeddings like sensitive data."
+  },
+  {
+   "no": "D1-20",
+   "r": 0,
+   "i": "🏢",
+   "t": "Business Use Case",
+   "g": "Where security begins",
+   "b": [
+    "The FIRST stage of the AI lifecycle: problem definition + alignment with org goals",
+    "Shift-left security: risk assessment and compliance checks START HERE",
+    "AI misaligned with goals = wasted resources + unmanaged risk"
+   ],
+   "tip": "\"At what stage should security begin?\" -> at the very start, the business use case."
+  },
+  {
+   "no": "D1-21",
+   "r": 2,
+   "i": "🔍",
+   "t": "Trustworthiness vs. Authenticity",
+   "g": "Trust vs. proof of origin",
+   "b": [
+    "Trustworthiness: is the source RELIABLE? (general trust, reputation)",
+    "Authenticity: did the data really come FROM THAT SOURCE? (origin verification, signatures)",
+    "The two core security questions of the data-collection stage — related but DIFFERENT"
+   ],
+   "tip": "Trust = trustworthiness, proof of origin = authenticity."
+  },
+  {
+   "no": "D1-22",
+   "r": 1,
+   "i": "🏗",
+   "t": "The Build Pipeline",
+   "g": "Prep -> Develop -> Evaluate",
+   "b": [
+    "Data preparation: cleaning + labeling — manipulation and mislabeling risk",
+    "Model development/selection: off-the-shelf model risk -> AI supply chain, backdoors",
+    "Model evaluation: testing BEFORE deployment — performance + red team + bias review"
+   ],
+   "tip": "Verifying the source when pulling a pre-built model = an AI supply-chain defense."
+  },
+  {
+   "no": "D1-23",
+   "r": 2,
+   "i": "🔄",
+   "t": "The Live-Environment Loop",
+   "g": "Deploy -> Validate -> Monitor -> Iterate",
+   "b": [
+    "Deployment: hardening, API security, access control",
+    "Validation: real-world verification AFTER deployment (A/B, canary, shadow mode)",
+    "Monitoring: drift + attack detection, CONTINUOUS | Feedback: improvement — poisoning risk!",
+    "EVALUATION != VALIDATION: evaluation is pre-deploy, validation is post-deploy"
+   ],
+   "tip": "Classic exam item: evaluation = test environment / BEFORE, validation = live / AFTER."
+  },
+  {
+   "no": "D1-24",
+   "r": 3,
+   "i": "👁",
+   "t": "The Human-Centric Trio",
+   "g": "HITL · Oversight · Validation",
+   "b": [
+    "Human-in-the-loop: human approval AT THE MOMENT OF DECISION (for critical actions)",
+    "Human oversight: CONTINUOUS general monitoring (dashboards, audits) + kill switch",
+    "Human validation: expert review AFTER OUTPUT",
+    "The EU AI Act requires human oversight and an emergency stop for high-risk systems"
+   ],
+   "tip": "Moment of decision -> HITL, continuous watching -> oversight, output check -> validation."
+  },
+  {
+   "no": "D2-01",
+   "r": 3,
+   "i": "🗺",
+   "t": "Threat-Modeling Resources",
+   "g": "Which one for which scenario?",
+   "b": [
+    "LLM-based application -> OWASP LLM Top 10",
+    "General ML model -> OWASP ML Security Top 10",
+    "Adversary tactics/techniques -> MITRE ATLAS (the AI version of ATT&CK)",
+    "Broad/ethical/social risk inventory -> MIT AI Risk Repository",
+    "Tracking a known AI flaw against a standard reference -> CVE AI Working Group"
+   ],
+   "tip": "The keyword picks the source: \"LLM app\"->LLM Top10, \"adversary technique\"->ATLAS."
+  },
+  {
+   "no": "D2-02",
+   "r": 2,
+   "i": "🎲",
+   "t": "STRIDE & Threat Modeling",
+   "g": "Structured threat analysis",
+   "b": [
+    "STRIDE: Spoofing, Tampering, Repudiation, Information disclosure, DoS, Elevation of privilege",
+    "MITRE ATLAS structure: Tactics (what they want) -> Techniques (how) -> Case Studies",
+    "Threat modeling = a continuous process, not a one-off",
+    "Defense in depth: a single control can be bypassed, layered controls hold"
+   ],
+   "tip": "Know STRIDE's six letters cold; they may ask for each one's meaning in an AI context."
+  },
+  {
+   "no": "D2-03",
+   "r": 3,
+   "i": "🚪",
+   "t": "Gateway vs. Model Controls",
+   "g": "Filter at the front, limit inside",
+   "b": [
+    "Gateway controls: IN FRONT of the model, filter traffic (prompt firewall, rate/token limits)",
+    "Model controls: ON the model itself, constrain behavior (guardrails, evaluation)",
+    "Prompt firewall: blocks a malicious prompt BEFORE it reaches the model",
+    "Model guardrail: blocks harmful OUTPUT / masks sensitive info"
+   ],
+   "tip": "On \"where is it applied?\": filtering->gateway, behavior->model."
+  },
+  {
+   "no": "D2-04",
+   "r": 3,
+   "i": "⏱",
+   "t": "The Limit Trio",
+   "g": "Rate · Token · Input Quota",
+   "b": [
+    "Rate limit: requests per unit of TIME (defense against DoS, brute-force, scraping)",
+    "Token limit: tokens PER request (cost + context-overflow control)",
+    "Input quota: a ceiling on total SIZE (data size) and COUNT (quantity)",
+    "The three complement each other — one does NOT replace another"
+   ],
+   "tip": "Requests/time->rate, tokens/request->token limit, total size->input quota. Don't mix them up."
+  },
+  {
+   "no": "D2-05",
+   "r": 2,
+   "i": "🖼",
+   "t": "Modality & Guardrail Testing",
+   "g": "Shrink the surface, test constantly",
+   "b": [
+    "Modality limits: TURN OFF unneeded modalities (a chatbot doesn't need image input? close it)",
+    "The simplest and most effective way to reduce attack surface",
+    "Guardrail testing & validation: NOT one-off, a CONTINUOUS process",
+    "Threats evolve -> guardrails must be retested continuously (red teaming)"
+   ],
+   "tip": "\"Disable the unneeded modality\" is almost always the safest answer."
+  },
+  {
+   "no": "D2-06",
+   "r": 3,
+   "i": "🔑",
+   "t": "Access-Control Domains",
+   "g": "Model · Data · Agent · API",
+   "b": [
+    "Model access has 4 tiers: inference (low risk) -> training/config/admin (high risk)",
+    "Data access: WRITE access to training data is the most critical (the poisoning door)",
+    "Agent access: an agent is AUTONOMOUS, it won't ask \"does this make sense?\" -> tightest control",
+    "Network/API access: authentication, IP whitelisting, API key rotation"
+   ],
+   "tip": "Training access >> inference access in risk. Agent access should always be tighter."
+  },
+  {
+   "no": "D2-07",
+   "r": 2,
+   "i": "🛡",
+   "t": "Least Privilege & Segmentation",
+   "g": "The universal access answer",
+   "b": [
+    "Least privilege: applies to ALL FOUR access domains -> the universal correct answer",
+    "Network segmentation: training pipeline / inference API / DB on separate subnets",
+    "RAG metadata-based filtering: filter vector results by the user's permissions",
+    "API keys: keep them in a secret manager, never in code, rotate regularly"
+   ],
+   "tip": "When unsure on an access question, least privilege is usually right."
+  },
+  {
+   "no": "D2-08",
+   "r": 3,
+   "i": "🔐",
+   "t": "The Three States of Encryption",
+   "g": "Transit · Rest · Use",
+   "b": [
+    "In transit: moving over the network -> TLS/HTTPS (API calls)",
+    "At rest: sitting on disk -> AES (model files, databases)",
+    "In use: while being processed IN MEMORY -> confidential computing / TEE (still maturing)",
+    "Key management: even the strongest encryption fails if the key leaks -> HSM, KMS, rotation"
+   ],
+   "tip": "\"Protected even while processing\" / \"TEE\" -> in-use encryption. Disk->rest, network->transit."
+  },
+  {
+   "no": "D2-09",
+   "r": 3,
+   "i": "🎭",
+   "t": "Anonymization vs. Masking vs. Redaction",
+   "g": "The most-confused trio",
+   "b": [
+    "Anonymization: PERMANENT, irreversible, the person cannot be identified",
+    "Masking: format is PRESERVED, replaced with fake data, may be reversible",
+    "Redaction: information is BLACKED OUT/removed, format not preserved",
+    "Dynamic masking: on-the-fly, role-based (SOC sees differently) | Static: a permanent masked copy (test env)"
+   ],
+   "tip": "Permanent+irreversible->anonymization, format kept+fake data->masking, black it out->redaction."
+  },
+  {
+   "no": "D2-10",
+   "r": 2,
+   "i": "🏷",
+   "t": "Classification & Minimization",
+   "g": "Classify first, keep little data",
+   "b": [
+    "Classification: the foundation of ALL data-safety techniques — you can't protect what you haven't classified",
+    "Data minimization: DON'T COLLECT data you don't need -> a core GDPR principle",
+    "Classification labels determine the attack surface and compliance requirements",
+    "On compliance questions, \"don't collect unnecessary data\" is usually correct"
+   ],
+   "tip": "\"What do the other data-safety techniques rest on?\" -> classification."
+  },
+  {
+   "no": "D2-11",
+   "r": 3,
+   "i": "📡",
+   "t": "Monitoring vs. Auditing",
+   "g": "Real-time vs. periodic",
+   "b": [
+    "Monitoring: real-time, continuous, AUTOMATED",
+    "Auditing: periodic, in-depth, HUMAN-involved",
+    "Prompt monitoring: watches both the query (incoming) and the response (outgoing)",
+    "Rate monitoring != rate limiting: limiting BLOCKS, monitoring DETECTS (catches low-and-slow)"
+   ],
+   "tip": "Monitoring detects, auditing reviews — one doesn't replace the other."
+  },
+  {
+   "no": "D2-12",
+   "r": 2,
+   "i": "🧾",
+   "t": "Log Sanitization vs. Protection",
+   "g": "Clean it vs. guard it",
+   "b": [
+    "Log sanitization: scrub SENSITIVE INFO from logs (PII, prompt content, secrets)",
+    "Log protection: preserve log INTEGRITY — prevent tampering (WORM, signatures)",
+    "Different risks: sanitization for leakage, protection against deletion/alteration",
+    "Customer data in a model's response -> response monitoring + log sanitization"
+   ],
+   "tip": "Sanitization = scrub the content, Protection = guard the log itself. Don't mix them."
+  },
+  {
+   "no": "D2-13",
+   "r": 2,
+   "i": "💸",
+   "t": "AI Cost Monitoring",
+   "g": "Prompts · Storage · Response · Processing",
+   "b": [
+    "Four cost dimensions: prompts (input tokens), storage (vectors/logs), response (output tokens), processing (compute)",
+    "A sudden cost spike -> could signal a DoS attack OR prompt flooding",
+    "Cost monitoring is both a FinOps and a SECURITY signal",
+    "Abnormal token consumption = an early warning of model DoS"
+   ],
+   "tip": "On a \"sudden cost spike\" scenario, be able to name which dimension is affected."
+  },
+  {
+   "no": "D2-14",
+   "r": 3,
+   "i": "⚖",
+   "t": "Quality & Compliance Auditing",
+   "g": "Hallucination · Accuracy · Bias · Access",
+   "b": [
+    "Hallucination auditing: measure the made-up-output rate, add source verification",
+    "Accuracy: dropping accuracy = model drift OR adversarial input OR data quality",
+    "Bias auditing: disaggregated analysis — overall 95% may look fine while a subgroup sits at 70%",
+    "Access auditing: who accessed what? detecting unauthorized access"
+   ],
+   "tip": "On bias, \"disaggregated analysis\": the overall average can hide bias, so measure subgroups separately."
+  },
+  {
+   "no": "D2-15",
+   "r": 3,
+   "i": "💉",
+   "t": "Prompt Injection & Jailbreaking",
+   "g": "The SQL injection of AI",
+   "b": [
+    "Prompt injection: change the model's BEHAVIOR (LLM Top 10 #1, the most-asked)",
+    "Jailbreaking: remove the model's RESTRICTIONS — related but different",
+    "Evidence: instructions hidden via encoding, \"ignore previous instructions\" patterns",
+    "Control: prompt firewall + model guardrail + prompt templates (layered)"
+   ],
+   "tip": "Injection=change behavior, Jailbreak=remove restrictions. Control: prompt FW + guardrail + template."
+  },
+  {
+   "no": "D2-16",
+   "r": 3,
+   "i": "☣",
+   "t": "The Poisoning Pair",
+   "g": "Data vs. Model Poisoning",
+   "b": [
+    "Data poisoning: manipulate the training DATA (mislabeling, injecting malicious samples)",
+    "Model poisoning: manipulate the MODEL ITSELF / its weights",
+    "Evidence: hash mismatch, unexpected model behavior, supply-chain breach",
+    "Control: data integrity controls + access controls + (for models) encryption"
+   ],
+   "tip": "Data poisoning=data, model poisoning=weights. Both need data integrity + access control."
+  },
+  {
+   "no": "D2-17",
+   "r": 3,
+   "i": "🪞",
+   "t": "Model Theft & Inversion",
+   "g": "Copy it vs. extract its data",
+   "b": [
+    "Model theft: copy the model's BEHAVIOR via systematic queries (model extraction)",
+    "Model inversion: reconstruct the TRAINING DATA from outputs",
+    "Membership inference: determine WHETHER a record was in the training set",
+    "Common evidence: systematic/heavy querying | Common control: rate limiting + access control"
+   ],
+   "tip": "Theft=copy behavior, Inversion=extract data, Membership=was the record in? All need rate limiting."
+  },
+  {
+   "no": "D2-18",
+   "r": 2,
+   "i": "🔗",
+   "t": "Supply Chain & Transfer",
+   "g": "Don't build on a base you don't trust",
+   "b": [
+    "AI supply chain: a poisoned pre-trained model / library / dataset",
+    "Transfer learning attack: a poisoned base model stays malicious even after fine-tuning",
+    "Trojan/Backdoor: hidden malicious behavior triggered by a specific input",
+    "Control: model source verification + data integrity + access control + encryption"
+   ],
+   "tip": "Verify the source of a downloaded model — that's the foundation of supply-chain defense."
+  },
+  {
+   "no": "D2-19",
+   "r": 2,
+   "i": "📉",
+   "t": "Integrity & Distortion Attacks",
+   "g": "Skewing · Output · Input · Bias",
+   "b": [
+    "Model skewing: manipulate the feedback loop to drift the model over time",
+    "Output integrity: alter the model's output after the fact (man-in-the-middle)",
+    "Input manipulation: trigger misclassification with adversarial input",
+    "Introducing biases: inject deliberate bias | Control: data integrity + guardrails"
+   ],
+   "tip": "Skewing targets feedback, output integrity targets the output, input manipulation targets the input."
+  },
+  {
+   "no": "D2-20",
+   "r": 3,
+   "i": "🤖",
+   "t": "Agency & Plug-in Risks",
+   "g": "Excessive Agency · Insecure Plug-in",
+   "b": [
+    "Excessive agency: an agent with more authority/autonomy than needed -> destructive actions",
+    "Insecure plug-in design: a plug-in with more access than it needs",
+    "Manipulating integrations: abusing connected systems (email, DB) through the AI",
+    "The shared fix for all three: LEAST PRIVILEGE + access controls"
+   ],
+   "tip": "Any scenario where \"the agent/plug-in is over-privileged\" -> the answer is least privilege."
+  },
+  {
+   "no": "D2-21",
+   "r": 2,
+   "i": "🌊",
+   "t": "Model DoS & Info Disclosure",
+   "g": "Exhaust vs. leak",
+   "b": [
+    "Model DoS: exhaust resources with expensive/complex queries (sponge attack)",
+    "Sensitive info disclosure: the model leaks sensitive info from training data",
+    "Insecure output handling: model output flows downstream unvalidated (XSS, SQLi)",
+    "DoS control: rate limit + prompt FW | Disclosure control: guardrails + encryption + access"
+   ],
+   "tip": "Model DoS->rate limiting; sensitive disclosure->guardrails + output filtering."
+  },
+  {
+   "no": "D2-22",
+   "r": 2,
+   "i": "🎚",
+   "t": "Hallucination & Overreliance",
+   "g": "A process problem, not a technical one",
+   "b": [
+    "Hallucination: the model produces confidently wrong/made-up output",
+    "Overreliance: users trusting AI output BLINDLY (not a technical attack)",
+    "Overreliance's fix isn't TECHNICAL but a PROCESS: human-in-the-loop, confidence warnings, training",
+    "Reducing hallucination: RAG, guardrails, prompt templates, source verification"
+   ],
+   "tip": "Overreliance's fix isn't a technical control; it's HITL + confidence + awareness training."
+  },
+  {
+   "no": "D3-01",
+   "r": 3,
+   "i": "🧰",
+   "t": "AI Tool Types",
+   "g": "Where does each tool run?",
+   "b": [
+    "IDE plug-in: the coding environment (risk: code leakage)",
+    "Browser plug-in: the web browser (risk: traffic monitoring)",
+    "CLI plug-in: the terminal | Chatbot: Q&A (risk: hallucination)",
+    "Personal assistant: a constant companion | MCP server: external-system integration"
+   ],
+   "tip": "\"MCP or chatbot?\" type questions come up; know WHERE each tool runs."
+  },
+  {
+   "no": "D3-02",
+   "r": 3,
+   "i": "🔌",
+   "t": "MCP Server Security",
+   "g": "The connective tissue of agentic AI",
+   "b": [
+    "MCP: an open standard for connecting an AI agent to external tools/services (USB-C-like)",
+    "Biggest risk: EXCESSIVE AGENCY / over-permissioning — the agent gets more authority than it needs",
+    "If the server is compromised, every connected service token (Gmail, Drive, etc.) is at risk",
+    "Fix: least privilege + tool filtering + continuous auditing (overlaps with OWASP LLM)"
+   ],
+   "tip": "On an MCP question, the biggest risk is excessive agency; the fix is least privilege + tool filtering."
+  },
+  {
+   "no": "D3-03",
+   "r": 3,
+   "i": "🔎",
+   "t": "Anomaly vs. Pattern vs. Signature",
+   "g": "The detection triangle",
+   "b": [
+    "Signature matching: a KNOWN threat signature (classic AV/IDS logic)",
+    "Pattern recognition: a RECURRING structure (a known APT attack pattern)",
+    "Anomaly detection: DEVIATION from normal (something never seen / zero-day)",
+    "Known->signature/pattern, unknown->anomaly"
+   ],
+   "tip": "\"Never-seen attack\"->anomaly; \"known APT pattern\"->pattern; \"signature\"->signature."
+  },
+  {
+   "no": "D3-04",
+   "r": 2,
+   "i": "🎯",
+   "t": "Security Use Cases",
+   "g": "Pick the most direct solution",
+   "b": [
+    "Reduce alert load / triage -> Incident management",
+    "Scan for known vulnerabilities -> Vulnerability analysis",
+    "Autonomous attack simulation -> Automated penetration testing",
+    "Code quality/bugs -> Code quality & linting | Fraud -> Fraud detection"
+   ],
+   "tip": "Several options may be partly right; the question wants the MOST DIRECT solution."
+  },
+  {
+   "no": "D3-05",
+   "r": 1,
+   "i": "🗣",
+   "t": "Language & Knowledge Use Cases",
+   "g": "Threat modeling · Translation · Summarization",
+   "b": [
+    "Threat modeling: AI helps generate scenarios / attack trees",
+    "Translation: analyzing multilingual threat intel / phishing",
+    "Summarization: condensing long reports/logs/CTI -> saves the analyst time",
+    "These use cases bring AI's NLP power to defense"
+   ],
+   "tip": "Summarization shortens a single source; synthesis (3.3) combines multiple sources."
+  },
+  {
+   "no": "D3-06",
+   "r": 3,
+   "i": "🎭",
+   "t": "Deepfakes & AI Content",
+   "g": "Impersonation · Mis- vs. Disinformation",
+   "b": [
+    "Deepfakes aren't just video: voice cloning, face swaps, writing-style mimicry",
+    "Impersonation: \"a fake call in the CEO's voice\" -> deepfake impersonation",
+    "Misinformation = UNINTENTIONALLY false | Disinformation = DELIBERATELY false (only difference: intent)",
+    "In CEO fraud / BEC attacks, deepfake voice + text are used together"
+   ],
+   "tip": "Mis vs. Dis is about INTENT. A deepfake voice is still a deepfake, not just video."
+  },
+  {
+   "no": "D3-07",
+   "r": 3,
+   "i": "⚡",
+   "t": "Enable vs. Enhance",
+   "g": "A new attack, or a stronger one?",
+   "b": [
+    "ENABLE: a new attack that couldn't exist without AI -> deepfakes, adversarial networks",
+    "ENHANCE: makes a traditional attack stronger -> phishing, DDoS, reconnaissance",
+    "Adversarial networks: using GANs to generate realistic fakes / evasion samples",
+    "Social engineering: AI's contribution is PERSONALIZATION + SCALE (success 2%->20%)"
+   ],
+   "tip": "Deepfake/adversarial = ENABLE (new). Phishing/DDoS/recon = ENHANCE (made stronger)."
+  },
+  {
+   "no": "D3-08",
+   "r": 3,
+   "i": "🤖",
+   "t": "Automated Attack Generation",
+   "g": "Discovery · Payload · Malware · Honeypot · DDoS",
+   "b": [
+    "Five sub-areas: attack vector discovery, payloads, malware, honeypot evasion, DDoS",
+    "Obfuscation: \"polymorphic malware\" -> every copy a different hash, same job (AI-assisted)",
+    "Automated data correlation: stitching scattered data into a target profile",
+    "AI SCALES and AUTOMATES the attack -> faster, cheaper, more of it"
+   ],
+   "tip": "When you see \"polymorphic malware\" -> AI-assisted obfuscation."
+  },
+  {
+   "no": "D3-09",
+   "r": 2,
+   "i": "🧩",
+   "t": "Low-code vs. No-code & Synthesis",
+   "g": "Automation tools",
+   "b": [
+    "Low-code: minimal coding knowledge, more FLEXIBLE | No-code: zero code, more LIMITED",
+    "\"Automation without knowing how to code\" -> No-code",
+    "Document synthesis: combine MULTIPLE sources into a NEW document",
+    "Summarization: condense a SINGLE document (don't confuse it with synthesis)"
+   ],
+   "tip": "A non-coding manager -> no-code. Synthesis=combine+create, summarization=condense."
+  },
+  {
+   "no": "D3-10",
+   "r": 3,
+   "i": "🚦",
+   "t": "CI/CD Security Controls",
+   "g": "The pipeline's 6 gates",
+   "b": [
+    "Code scanning (SAST) + Software composition analysis (dependencies/CVEs)",
+    "Unit testing + Regression testing (did old behavior break?)",
+    "Model testing: performance + adversarial + bias tests on every model update",
+    "Automated deployment/rollback: if a regression appears, deploy is BLOCKED"
+   ],
+   "tip": "On every model update: performance+adversarial+bias tests; regression->block deploy."
+  },
+  {
+   "no": "D3-11",
+   "r": 3,
+   "i": "🛠",
+   "t": "AI Agents & Change Management",
+   "g": "Assist, don't decide",
+   "b": [
+    "AI agent weakness: missing the BIG PICTURE — isolated analysis (1 alert low, 50 alerts an attack)",
+    "AI's role in change mgmt: not to MAKE the decision, but to SUPPORT decision-making",
+    "Low-risk change -> AI auto-approve | High-risk -> human/CAB decision",
+    "AI-assisted approval + automated deployment/rollback speeds change up"
+   ],
+   "tip": "AI doesn't approve a high-risk change on its own; CAB/human decision is required."
+  },
+  {
+   "no": "D3-12",
+   "r": 2,
+   "i": "🎫",
+   "t": "Incident & Ticket Automation",
+   "g": "Speed it up with enrichment",
+   "b": [
+    "Ticket enrichment: AI automatically enriches the ticket with extra context",
+    "What it adds: IP reputation, past incidents, threat intel -> shortens investigation time",
+    "Triage: AI prioritizes alerts and filters false positives",
+    "The human analyst stays the final decision-maker (human-in-the-loop)"
+   ],
+   "tip": "Ticket \"enrichment\" = AI auto-adding context/threat intel."
+  },
+  {
+   "no": "D4-01",
+   "r": 3,
+   "i": "🏛",
+   "t": "AI CoE & Policy vs. Procedure",
+   "g": "Set the standard, delegate the work",
+   "b": [
+    "AI Center of Excellence: sets standards, coordinates, oversees — doesn't run every project itself",
+    "Federated model: business units run projects, the CoE provides the standard",
+    "Policy = \"WHAT must be done\" (strategic rule) | Procedure = \"HOW to do it\" (step by step)",
+    "Main governance tools for shadow AI: an AI CoE + an Acceptable Use Policy"
+   ],
+   "tip": "\"Must pass a security test\"->policy. \"Step 1, Step 2...\"->procedure. The CoE doesn't do every job itself."
+  },
+  {
+   "no": "D4-02",
+   "r": 3,
+   "i": "👷",
+   "t": "AI Roles — Who's Responsible?",
+   "g": "The most-confused team",
+   "b": [
+    "Data Scientist (science/model development) vs. ML Engineer (engineering/production code)",
+    "ML Engineer (model code) vs. MLOps Engineer (operational automation, drift detection)",
+    "AI Architect (overall architecture) vs. AI Security Architect (security architecture)",
+    "Drift->MLOps | Risk assessment->Risk Analyst | Bias audit->Auditor | Policy enforcement->Governance Engineer"
+   ],
+   "tip": "\"Which role in this case?\" comes up; know each role's one-sentence definition."
+  },
+  {
+   "no": "D4-03",
+   "r": 2,
+   "i": "🔍",
+   "t": "Governance & Audit Roles",
+   "g": "Independence is mandatory",
+   "b": [
+    "AI Governance Engineer: technically enforces policy/standard implementation",
+    "AI Risk Analyst: risk identification, assessment, prioritization",
+    "AI Auditor: must be INDEPENDENT — not involved in the system they audit (separation of duties)",
+    "Auditor + Risk Analyst + Governance Engineer = the GRC triangle"
+   ],
+   "tip": "An AI Auditor must NOT be in the development/operation of the system they audit (independence)."
+  },
+  {
+   "no": "D4-04",
+   "r": 3,
+   "i": "🔬",
+   "t": "Transparency vs. Explainability",
+   "g": "How vs. why",
+   "b": [
+    "Transparency: \"HOW does the AI work?\" — general openness (model cards, documentation)",
+    "Explainability: \"WHY did the AI make this decision?\" — specific decision rationale (SHAP, LIME)",
+    "Answer according to which question the scenario is asking",
+    "Both are Responsible AI principles but answer different questions"
+   ],
+   "tip": "\"How does it work\"->transparency, \"why this decision\"->explainability. The most-asked distinction."
+  },
+  {
+   "no": "D4-05",
+   "r": 3,
+   "i": "⚖",
+   "t": "Fairness vs. Inclusiveness & Bias",
+   "g": "Output vs. access",
+   "b": [
+    "Fairness: decisions being FAIR (output) — \"the model discriminates\"",
+    "Inclusiveness: everyone being able to ACCESS it (input/access) — \"the model can't serve some people\"",
+    "Proxy variable: a variable correlated with a protected attribute (zip code/name/school) -> indirect bias",
+    "CompTIA classic: \"loan agent unfairly approves a certain group\" -> Introduction of bias"
+   ],
+   "tip": "Fairness=output fairness, Inclusiveness=access. A proxy variable creates indirect bias."
+  },
+  {
+   "no": "D4-06",
+   "r": 2,
+   "i": "🧭",
+   "t": "Responsible AI Principles",
+   "g": "9 principles + scenario matching",
+   "b": [
+    "Reliability & safety: consistent, safe operation | Privacy & security: data protection",
+    "Accountability: clear responsibility | Consistency: same input, same output",
+    "Awareness training: employees' awareness of AI risks",
+    "Differential privacy: individual records hidden while aggregate analysis stays possible (mathematical privacy)"
+   ],
+   "tip": "Know each of the 9 principles in one sentence; \"which principle is violated?\" comes up."
+  },
+  {
+   "no": "D4-07",
+   "r": 3,
+   "i": "👻",
+   "t": "Shadow AI & Autonomous Risk",
+   "g": "Redirect, don't ban",
+   "b": [
+    "Shadow AI: employees using UNAUTHORIZED AI tools -> a serious governance risk",
+    "Most effective fix: NOT an outright ban -> a safe alternative + policy + training",
+    "Autonomous systems risk: uncontrolled autonomous action -> human-in-the-loop + KILL SWITCH",
+    "Accidental data leakage: an employee pastes sensitive data into a public model"
+   ],
+   "tip": "Shadow AI's fix isn't a ban; offer a safe alternative. Autonomous risk->HITL + kill switch."
+  },
+  {
+   "no": "D4-08",
+   "r": 2,
+   "i": "💼",
+   "t": "Business Risks",
+   "g": "IP · Reputation · Accuracy",
+   "b": [
+    "IP-related risk: training on copyrighted data, unclear ownership of model output",
+    "Reputational loss: bias/hallucination/leakage going public -> brand damage",
+    "Accuracy & performance: the model decays over time (drift) -> wrong decisions",
+    "These risks are managed at the BUSINESS/GRC level, not the technical one"
+   ],
+   "tip": "IP, reputation, accuracy = business-level risks; the fix is governance + monitoring + policy."
+  },
+  {
+   "no": "D4-09",
+   "r": 3,
+   "i": "🇪🇺",
+   "t": "EU AI Act",
+   "g": "4 risk tiers + heavy fines",
+   "b": [
+    "4 risk tiers: Unacceptable (banned) > High > Limited (transparency) > Minimal",
+    "High-risk examples: employment, education, credit scoring, law enforcement, medical",
+    "Chatbot->Limited (transparency) | Spam filter->Minimal",
+    "Fine: 35M EUR OR 7% of global turnover — even higher than GDPR"
+   ],
+   "tip": "Employment/credit/law-enforcement->High risk. Fine 35M EUR / 7%. Most-asked: \"which risk category?\""
+  },
+  {
+   "no": "D4-10",
+   "r": 3,
+   "i": "📋",
+   "t": "Telling the Frameworks Apart",
+   "g": "Law vs. Principles vs. Standard vs. Framework",
+   "b": [
+    "EU AI Act: a LEGAL REQUIREMENT (law)",
+    "OECD: international PRINCIPLES (non-binding)",
+    "ISO/IEC 42001: a technical STANDARD + certification (the AI version of ISO 27001)",
+    "NIST AI RMF: a risk-management FRAMEWORK — 4 functions: Govern, Map, Measure, Manage"
+   ],
+   "tip": "Legal->EU AI Act, principles->OECD, standard/certification->ISO 42001, risk framework->NIST RMF."
+  },
+  {
+   "no": "D4-11",
+   "r": 2,
+   "i": "🌍",
+   "t": "Data Sovereignty & Model Choice",
+   "g": "Where's the data, whose law?",
+   "b": [
+    "Data sovereignty: the PHYSICAL location of data + which country's law applies",
+    "In cloud AI, the data-center region is a critical compliance concern",
+    "Sanctioned vs. unsanctioned: approved/unapproved tool use (ties to shadow AI)",
+    "Sensitive data (health/defense/finance) -> private model or hybrid; general use -> public is fine"
+   ],
+   "tip": "Sensitive data->private/hybrid model. Data sovereignty=data location + applicable law."
+  },
+  {
+   "no": "D4-12",
+   "r": 1,
+   "i": "🤝",
+   "t": "Third-Party Evaluation",
+   "g": "How do you vet a provider?",
+   "b": [
+    "Evaluation elements: SOC 2, ISO 27001, DPA (Data Processing Agreement)",
+    "SLA + data-center location + sub-processor chain",
+    "\"How do you assess the provider?\" -> answer with these elements",
+    "Third-party compliance = part of AI supply-chain governance"
+   ],
+   "tip": "Provider evaluation: SOC 2 + ISO 27001 + DPA + SLA + data-center location."
+  }
+ ],
+ "obj2card": {
+  "196": 0,
+  "198": 1,
+  "202": 1,
+  "195": 2,
+  "203": 2,
+  "199": 3,
+  "200": 4,
+  "201": 4,
+  "197": 5,
+  "140": 6,
+  "141": 6,
+  "139": 6,
+  "138": 7,
+  "134": 8,
+  "135": 8,
+  "136": 8,
+  "137": 8,
+  "133": 9,
+  "158": 10,
+  "153": 10,
+  "152": 10,
+  "154": 11,
+  "157": 11,
+  "155": 11,
+  "156": 11,
+  "86": 12,
+  "90": 12,
+  "88": 13,
+  "89": 13,
+  "87": 14,
+  "84": 15,
+  "85": 15,
+  "98": 16,
+  "97": 16,
+  "99": 16,
+  "216": 17,
+  "174": 18,
+  "175": 18,
+  "176": 18,
+  "56": 19,
+  "57": 19,
+  "80": 20,
+  "82": 20,
+  "81": 20,
+  "83": 21,
+  "131": 21,
+  "132": 21,
+  "100": 22,
+  "215": 22,
+  "142": 22,
+  "106": 22,
+  "116": 23,
+  "119": 23,
+  "117": 23,
+  "118": 23,
+  "148": 24,
+  "145": 24,
+  "146": 24,
+  "126": 24,
+  "125": 24,
+  "61": 24,
+  "188": 25,
+  "112": 26,
+  "107": 26,
+  "128": 26,
+  "129": 26,
+  "130": 26,
+  "113": 27,
+  "114": 27,
+  "108": 27,
+  "109": 27,
+  "110": 27,
+  "111": 28,
+  "115": 28,
+  "127": 29,
+  "79": 29,
+  "20": 29,
+  "144": 29,
+  "103": 31,
+  "102": 31,
+  "104": 31,
+  "91": 32,
+  "93": 32,
+  "95": 32,
+  "92": 33,
+  "94": 33,
+  "159": 34,
+  "160": 34,
+  "122": 34,
+  "161": 34,
+  "163": 34,
+  "124": 35,
+  "123": 35,
+  "2": 36,
+  "4": 36,
+  "3": 36,
+  "1": 36,
+  "48": 37,
+  "46": 37,
+  "47": 37,
+  "45": 37,
+  "41": 38,
+  "29": 38,
+  "23": 38,
+  "67": 38,
+  "68": 38,
+  "38": 39,
+  "39": 39,
+  "40": 39,
+  "63": 39,
+  "35": 40,
+  "33": 40,
+  "31": 40,
+  "69": 40,
+  "62": 40,
+  "21": 41,
+  "43": 41,
+  "44": 41,
+  "22": 41,
+  "64": 41,
+  "34": 42,
+  "36": 42,
+  "25": 42,
+  "28": 42,
+  "66": 44,
+  "24": 43,
+  "27": 43,
+  "30": 43,
+  "65": 43,
+  "32": 44,
+  "42": 44,
+  "26": 44,
+  "37": 45,
+  "192": 46,
+  "189": 46,
+  "191": 46,
+  "190": 46,
+  "194": 46,
+  "193": 47,
+  "210": 48,
+  "209": 48,
+  "204": 48,
+  "208": 49,
+  "214": 49,
+  "205": 49,
+  "206": 49,
+  "207": 49,
+  "212": 50,
+  "213": 50,
+  "211": 50,
+  "5": 51,
+  "7": 51,
+  "8": 51,
+  "6": 51,
+  "19": 52,
+  "186": 52,
+  "162": 52,
+  "49": 53,
+  "50": 53,
+  "54": 53,
+  "53": 53,
+  "52": 53,
+  "51": 53,
+  "147": 53,
+  "55": 53,
+  "183": 54,
+  "184": 54,
+  "101": 54,
+  "71": 55,
+  "74": 55,
+  "75": 55,
+  "73": 55,
+  "72": 55,
+  "70": 56,
+  "0": 56,
+  "58": 56,
+  "59": 56,
+  "60": 56,
+  "120": 57,
+  "150": 58,
+  "151": 58,
+  "15": 59,
+  "17": 59,
+  "16": 59,
+  "14": 59,
+  "18": 59,
+  "9": 59,
+  "13": 59,
+  "11": 60,
+  "12": 60,
+  "10": 60,
+  "173": 61,
+  "168": 61,
+  "169": 62,
+  "170": 62,
+  "181": 62,
+  "172": 63,
+  "171": 63,
+  "164": 63,
+  "166": 63,
+  "165": 63,
+  "167": 63,
+  "185": 64,
+  "179": 64,
+  "177": 64,
+  "180": 65,
+  "182": 65,
+  "178": 65,
+  "105": 66,
+  "149": 67,
+  "121": 67,
+  "143": 67,
+  "96": 68,
+  "77": 68,
+  "76": 68,
+  "78": 68,
+  "187": 69
+ }
+}
