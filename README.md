@@ -36,7 +36,7 @@ Two evidence-based learning methods are baked into the core loop:
 ## 📸 Screenshots
 
 <!-- Add your screenshots to docs/ and update these paths -->
-| Command Center | Intel Card | Exam Report |
+| Command Center | Intel Card | Exam |
 |:---:|:---:|:---:|
 | ![home](docs/screenshot-home.png) | ![card](docs/screenshot-card.png) | ![exam](docs/screenshot-exam.png) |
 
