@@ -3,7 +3,7 @@
 **An ADHD-friendly, gamified study app for the CompTIA SecAI+ (CY0-001) certification.**
 Learn the material through a cybersecurity roguelite — spaced repetition and active recall, disguised as a game you actually want to open.
 
-[![Play](https://img.shields.io/badge/▶_Play-Live_Demo-ff8e3c?style=for-the-badge)](https://YOUR-USERNAME.github.io/breach-protocol/)
+[![Play](https://img.shields.io/badge/▶_Play-Live_Demo-ff8e3c?style=for-the-badge)](https://furkan-taskin.github.io/breach-protocol/)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Content: CC BY 4.0](https://img.shields.io/badge/Questions-CC_BY_4.0-green.svg?style=flat-square)](data/LICENSE-CONTENT.md)
 [![PWA](https://img.shields.io/badge/PWA-offline_ready-purple.svg?style=flat-square)](#-install-on-your-phone)
@@ -30,7 +30,7 @@ Two evidence-based learning methods are baked into the core loop:
 - 📈 **Readiness score** — one number that tells you if you're ready, blending exam history, accuracy, and mastery
 - 👾 **Roguelite layer** — domain bosses, combo multipliers, integrity bar, joker power-ups, daily missions, rank progression
 - 📱 **Installable PWA** — works fully offline once installed; perfect for commutes
-- 💾 **Save export/import** — back up or move your progress across devices with a single code
+- 💾 **Save export/import** — back up or move  progress across devices with a single code
 - 🗂️ **Multiple question sets** — a 312-question Master pool and a 325-question HARD pool (tougher, scenario-heavy, all domains), each with fully separate progress
 
 ## 📸 Screenshots
@@ -43,7 +43,7 @@ Two evidence-based learning methods are baked into the core loop:
 ## 📲 Install on your phone
 
 **iPhone (recommended):**
-1. Open the [live site](https://YOUR-USERNAME.github.io/breach-protocol/) in Safari (once, with internet)
+1. Open the [live site](https://furkan-taskin.github.io/breach-protocol/) in Safari (once, with internet)
 2. Tap **Share → Add to Home Screen**
 3. Launch from the icon — it now runs full-screen and **fully offline**
 
