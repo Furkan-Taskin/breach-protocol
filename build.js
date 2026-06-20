@@ -23,11 +23,22 @@ const readJSON = p => JSON.parse(read(p));
 const objectives = readJSON('data/objectives.json');
 const omap = Object.fromEntries(objectives.map((o, i) => [o, i]));
 
+// Any objective referenced by a question but not in the official list is
+// appended on the fly. This keeps every question's badge valid; questions
+// whose objective has no matching card simply won't trigger a card (harmless).
+function objIndex(obj) {
+  if (!(obj in omap)) {
+    omap[obj] = objectives.length;
+    objectives.push(obj);
+  }
+  return omap[obj];
+}
+
 function packQuestions(recs) {
   // compact array form the engine expects: [domain, objIdx, q, [opts], answerIdx, explanation]
   return recs.map(r => [
     r.domain,
-    omap[r.objective],
+    objIndex(r.objective),
     r.question,
     r.options,
     'ABCD'.indexOf(r.answer),
@@ -45,6 +56,12 @@ const sets = {
 if (fs.existsSync(path.join(__dirname, 'data/questions-core.json'))) {
   const core = packQuestions(readJSON('data/questions-core.json'));
   sets.core = { name: 'STANDART HAVUZ', desc: core.length + ' questions · broad coverage', q: core };
+}
+
+// HARD set — tougher, scenario-heavy questions across all four domains
+if (fs.existsSync(path.join(__dirname, 'data/questions-hard.json'))) {
+  const hard = packQuestions(readJSON('data/questions-hard.json'));
+  sets.hard = { name: 'HARD MODE', desc: hard.length + ' tough questions · all domains', q: hard };
 }
 
 const DATA = { objs: objectives, sets };

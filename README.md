@@ -3,7 +3,7 @@
 **An ADHD-friendly, gamified study app for the CompTIA SecAI+ (CY0-001) certification.**
 Learn the material through a cybersecurity roguelite — spaced repetition and active recall, disguised as a game you actually want to open.
 
-[![Play](https://img.shields.io/badge/▶_Play-Live_Demo-ff8e3c?style=for-the-badge)](https://furkan-taskin.github.io/breach-protocol/)
+[![Play](https://img.shields.io/badge/▶_Play-Live_Demo-ff8e3c?style=for-the-badge)](https://YOUR-USERNAME.github.io/breach-protocol/)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Content: CC BY 4.0](https://img.shields.io/badge/Questions-CC_BY_4.0-green.svg?style=flat-square)](data/LICENSE-CONTENT.md)
 [![PWA](https://img.shields.io/badge/PWA-offline_ready-purple.svg?style=flat-square)](#-install-on-your-phone)
@@ -23,7 +23,7 @@ Two evidence-based learning methods are baked into the core loop:
 
 ## Features
 
-- 🎯 **312 original practice questions** across all four SecAI+ domains, weighted toward the real exam blueprint (17 / 40 / 24 / 19%)
+- 🎯 **637 original practice questions** across all four SecAI+ domains (a 312-question Master set + a 325-question HARD set), weighted toward the real exam blueprint (17 / 40 / 24 / 19%)
 - 🧠 **Full SM-2 algorithm** with date-based scheduling, e-factor tracking, and quality grading (Forgot / Hard / Good / Easy)
 - 🃏 **70 collectible Intel Cards** — micro-briefings distilled from the objectives, with 4 rarity tiers, holographic foils, and 3D flip animations. Covers all 217 exam objectives.
 - 🎓 **Certification exam simulator** — timed, blueprint-weighted, flagging + question palette, full post-exam report with per-domain breakdown
@@ -31,18 +31,19 @@ Two evidence-based learning methods are baked into the core loop:
 - 👾 **Roguelite layer** — domain bosses, combo multipliers, integrity bar, joker power-ups, daily missions, rank progression
 - 📱 **Installable PWA** — works fully offline once installed; perfect for commutes
 - 💾 **Save export/import** — back up or move your progress across devices with a single code
+- 🗂️ **Multiple question sets** — a 312-question Master pool and a 325-question HARD pool (tougher, scenario-heavy, all domains), each with fully separate progress
 
 ## 📸 Screenshots
 
 <!-- Add your screenshots to docs/ and update these paths -->
-| Command Center | Intel Card | Exam |
+| Command Center | Intel Card | Exam Report |
 |:---:|:---:|:---:|
 | ![home](docs/screenshot-home.png) | ![card](docs/screenshot-card.png) | ![exam](docs/screenshot-exam.png) |
 
 ## 📲 Install on your phone
 
 **iPhone (recommended):**
-1. Open the [live site](https://furkan-taskin.github.io/breach-protocol/) in Safari (once, with internet)
+1. Open the [live site](https://YOUR-USERNAME.github.io/breach-protocol/) in Safari (once, with internet)
 2. Tap **Share → Add to Home Screen**
 3. Launch from the icon — it now runs full-screen and **fully offline**
 
@@ -55,7 +56,7 @@ Your progress is saved locally on the device. Use **Stats → Backup/Restore** t
 This is a single static file — no build step required.
 
 ```bash
-git clone https://github.com/furkan-taskin/breach-protocol.git
+git clone https://github.com/YOUR-USERNAME/breach-protocol.git
 cd breach-protocol
 # serve the folder with any static server, e.g.:
 python3 -m http.server 8000
